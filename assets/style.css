@@ -36,9 +36,10 @@ body {
   width: 300px;
   height: 125px;
   padding: 20px;
-  background: var(--black);
-  margin-top: -210px;
-  /* margin-top: 20px; */
+  /* background: var(--black); */
+  background: #333;
+  /* margin-top: -210px; */
+  margin-top: 20px;
   border-radius: 0.25rem;
   transition: all ease-in-out 1s;
 }
@@ -59,10 +60,14 @@ body {
 }
 
 .rules {
-  color: #555;
-  font-size: 0.965rem;
+  /* padding: 20px; */
+  /* background: rgb(128, 6, 6); */
+  border-radius: 0.259rem;
+  font-weight: bold;
+  color: rgb(255, 111, 111);
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .form {
@@ -70,7 +75,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 545px;
   height: 390px;
   background: var(--black);
   border-radius: 0.25rem;
@@ -123,7 +128,7 @@ button {
 .Users {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 545px;
   height: auto;
   background: var(--black);
   border-radius: 0.25rem;
@@ -166,6 +171,11 @@ li {
   letter-spacing: 0.3px;
   font-size: 1.05rem;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #bbb;
 }
 
 li + li {
@@ -213,7 +223,7 @@ li span {
   font-weight: 600;
   color: var(--white);
   font-size: 0.8445rem;
-  cursor: not-allowed;
+  cursor: pointer;
   transition: background ease-in-out 150ms;
 }
 
@@ -224,11 +234,11 @@ li span {
 .close:hover,
 .edit:hover {
   transform: scale(1.2);
-  background: rgb(252, 32, 32);
+  background: rgb(94, 19, 19);
 }
 
 .edit:hover {
-  background: rgb(224, 238, 28);
+  background: rgb(107, 75, 15);
 }
 
 .author {

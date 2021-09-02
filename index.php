@@ -24,14 +24,25 @@ function calcAge($dob) {
 <body>
 
   <div class="Container">
-    <div class="info">
+    <!-- <div class="info">
       <span class="span">Atenção!</span>
       <p>
         {
-        <span class="rules">O primeiro usuário deverá ser cadastrado novamente!..</span>
+        <span class="rules">
+          ...
+          </span>
         }
       </p>
-    </div>
+    </div> -->
+
+    <?php 
+      if(isset($_SESSION['alert'])) {
+        echo "<div class='info'>".
+        "<span class='rules'>".$_SESSION['alert']."</span>".
+        "</div>";
+        $_SESSION['alert'] = '';
+      }
+    ?>
 
     <form class="form" method="POST" action="add_user_action.php">
       <h1> JSON Creator </h1>
@@ -58,7 +69,7 @@ function calcAge($dob) {
           if(count($allUsers) > 1) {
             echo count($allUsers);
           } else {
-            echo "0";
+            echo count($allUsers);
           }
           ?>
           </span>
@@ -71,8 +82,12 @@ function calcAge($dob) {
               <li> <span>Email:</span> <?= $user['email']?></li>
               <li> <span>Username:</span> <?= $user['username']?></li>
               <li class='date'> <?= calcAge($user['dob']) ?> years old</li>
-              <li class='close'>-</li>
-              <li class='edit'>+</li>
+              <li class='close'>
+                <a href="delete.php?id=<?= $user['id'] ?>">-</a>
+              </li>
+              <li class='edit'>
+                <a href="edit.php?id=<?= $user['id'] ?>">+</a>
+              </li>
             </ul>
           <?php endforeach ?>  
       </div>
@@ -83,6 +98,8 @@ function calcAge($dob) {
     <div class="credits">Ícones feitos por <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a
         href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
   </div>
+
+  <script src="assets/script.js"></script>
 </body>
 
 </html>
